@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  gitpod:
+    image: eu.gcr.io/gitpod-core-dev/build/gitpod-self-hosted:latest
+    container_name: gitpod
+    restart: always
+    ports:
+      - "8080:3000"
+    environment:
+      - GITPOD_DOMAIN=build.hifinexus-dtphoenixvts.online
+      - GITHUB_CLIENT_ID=Ov23lipfmOMWArbmjpTP
+      - GITHUB_CLIENT_SECRET=7d1561c87129f3e8c5fcea9fb4094acb260b787a
+    volumes:
+      - gitpod_data:/workspace
+
+volumes:
+  gitpod_data:
